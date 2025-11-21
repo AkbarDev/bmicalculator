@@ -22,6 +22,25 @@
             </header>
 
             <form id="bmiForm">
+                <!-- Personal Details Section -->
+                <div class="input-group-row">
+                    <div class="input-group half-width">
+                        <label for="age">Age</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="age" placeholder="25" min="2" max="120" required>
+                        </div>
+                    </div>
+                    <div class="input-group half-width">
+                        <label for="gender">Gender</label>
+                        <div class="input-wrapper">
+                            <select id="gender" class="full-select">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Weight Section -->
                 <div class="input-group">
                     <label for="weight">Weight</label>

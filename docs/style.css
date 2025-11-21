@@ -78,6 +78,25 @@ header p {
     margin-bottom: 20px;
 }
 
+.input-group-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.half-width {
+    flex: 1;
+    margin-bottom: 0;
+    /* Override default margin */
+}
+
+.full-select {
+    width: 100%;
+    border-left: none !important;
+    /* Remove the separator line */
+    text-align: left !important;
+}
+
 label {
     display: block;
     margin-bottom: 8px;

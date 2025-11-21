@@ -30,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
+        const age = parseInt(document.getElementById('age').value);
+        const gender = document.getElementById('gender').value;
         let weight = parseFloat(weightInput.value);
         let height = 0;
 
@@ -49,15 +51,15 @@ document.addEventListener('DOMContentLoaded', () => {
             height = (feet * 0.3048) + (inches * 0.0254);
         }
 
-        if (weight > 0 && height > 0) {
+        if (weight > 0 && height > 0 && age > 0) {
             const bmi = weight / (height * height);
-            displayResult(bmi);
+            displayResult(bmi, age, gender);
         } else {
-            alert('Please enter valid positive numbers.');
+            alert('Please enter valid positive numbers for all fields.');
         }
     });
 
-    function displayResult(bmi) {
+    function displayResult(bmi, age, gender) {
         resultContainer.classList.remove('hidden');
 
         // Animate the number
@@ -79,21 +81,22 @@ document.addEventListener('DOMContentLoaded', () => {
         let message = '';
         let color = '';
 
+        // Basic WHO categories (can be refined by age/gender if needed)
         if (bmi < 18.5) {
             category = 'Underweight';
-            message = 'Time to grab a bite! Eat more nutritious food.';
+            message = `As a ${age}-year-old ${gender}, you might need more nutrition.`;
             color = '#facc15'; // Yellow
         } else if (bmi >= 18.5 && bmi < 25) {
             category = 'Normal Weight';
-            message = 'Great job! Keep maintaining your healthy lifestyle.';
+            message = `Great job! Your weight is healthy for a ${gender} of your age.`;
             color = '#4ade80'; // Green
         } else if (bmi >= 25 && bmi < 30) {
             category = 'Overweight';
-            message = 'Consider exercising more and watching your diet.';
+            message = `For a ${age}-year-old, consider a balanced diet and exercise.`;
             color = '#fb923c'; // Orange
         } else {
             category = 'Obese';
-            message = 'Please consult a healthcare provider for advice.';
+            message = 'Please consult a healthcare provider for personalized advice.';
             color = '#f87171'; // Red
         }
 
