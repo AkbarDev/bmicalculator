@@ -26,6 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    backToMetricBtn.addEventListener('click', () => {
+        heightUnit.value = 'm';
+        heightWrapper.classList.remove('hidden');
+        ftInWrapper.classList.add('hidden');
+    });
+
     // Calculate BMI
     form.addEventListener('submit', (e) => {
         e.preventDefault();

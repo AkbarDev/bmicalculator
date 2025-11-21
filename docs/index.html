@@ -56,25 +56,23 @@
                 <!-- Height Section -->
                 <div class="input-group">
                     <label for="height">Height</label>
-                    <div class="combined-wrapper">
-                        <!-- Metric Input -->
-                        <div class="input-wrapper" id="heightWrapper">
-                            <input type="number" id="height" placeholder="0" step="0.01" required>
-                        </div>
 
-                        <!-- Imperial Input (Hidden by default) -->
-                        <div class="input-wrapper hidden" id="ftInWrapper">
-                            <input type="number" id="feet" placeholder="ft" step="1">
-                            <span class="separator">:</span>
-                            <input type="number" id="inches" placeholder="in" step="0.1">
-                        </div>
-
-                        <!-- Unit Dropdown (Always visible) -->
-                        <select id="heightUnit" class="unit-select">
+                    <!-- Metric Input (Default) -->
+                    <div class="input-wrapper" id="heightWrapper">
+                        <input type="number" id="height" placeholder="0" step="0.01" required>
+                        <select id="heightUnit">
                             <option value="m">m</option>
                             <option value="cm">cm</option>
                             <option value="ft">ft</option>
                         </select>
+                    </div>
+
+                    <!-- Imperial Input (Hidden) -->
+                    <div class="input-wrapper hidden" id="ftInWrapper">
+                        <input type="number" id="feet" placeholder="ft" step="1">
+                        <span class="separator">:</span>
+                        <input type="number" id="inches" placeholder="in" step="0.1">
+                        <button type="button" id="backToMetric" class="icon-btn" aria-label="Switch unit">↺</button>
                     </div>
                 </div>
 
