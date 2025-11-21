@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A premium BMI Calculator to check your Body Mass Index with support for multiple units (kg/lbs, m/cm/ft).">
+    <title>BMI Calculator | Check Your Health</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <div class="glass-card">
+            <header>
+                <h1>BMI Calculator</h1>
+                <p>Check your body mass index instantly</p>
+            </header>
+
+            <form id="bmiForm">
+                <!-- Weight Section -->
+                <div class="input-group">
+                    <label for="weight">Weight</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="weight" placeholder="0" step="0.1" required>
+                        <select id="weightUnit">
+                            <option value="kg">kg</option>
+                            <option value="lbs">lbs</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Height Section -->
+                <div class="input-group">
+                    <label for="height">Height</label>
+                    <div class="input-wrapper" id="heightWrapper">
+                        <input type="number" id="height" placeholder="0" step="0.01" required>
+                        <select id="heightUnit">
+                            <option value="m">m</option>
+                            <option value="cm">cm</option>
+                            <option value="ft">ft</option>
+                        </select>
+                    </div>
+                    <!-- Hidden inputs for Feet/Inches -->
+                    <div class="input-wrapper hidden" id="ftInWrapper">
+                        <input type="number" id="feet" placeholder="ft" step="1">
+                        <input type="number" id="inches" placeholder="in" step="0.1">
+                        <span class="unit-label">ft/in</span>
+                        <button type="button" id="backToMetric" class="icon-btn" aria-label="Switch unit">↺</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="calculate-btn">Calculate BMI</button>
+            </form>
+
+            <div id="result" class="result-container hidden">
+                <div class="bmi-score">
+                    <span id="bmiValue">0.0</span>
+                    <small>BMI</small>
+                </div>
+                <p id="bmiCategory" class="bmi-category">Normal</p>
+                <p id="bmiMessage" class="bmi-message">You are doing great!</p>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
